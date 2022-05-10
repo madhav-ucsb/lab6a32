@@ -328,7 +328,7 @@ void WordCount::addAllWords(const std::string& text) {
   {
     words.push_back(word);
   }
-  int b = 0;
+  int b ;
   for(int i = 0 ; i<(int) words.size() ; i++)
    {
      b = incrWordCount(words.at(i));
