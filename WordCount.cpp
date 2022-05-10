@@ -309,7 +309,7 @@ void WordCount::addAllWords(const std::string& text) {
   std::vector<std::string> words;
 
   std::string empty = " \n\t";
-  char space = empty.at(0);
+  //char space = empty.at(0);
   // // char t = empty.at(3);
 
   // // char dash = empty.at(1);
@@ -400,12 +400,14 @@ void WordCount::addAllWords(const std::string& text) {
 
   
 
-//   b.dumpWordsSortedByWord(std::cout);
+//   // b.dumpWordsSortedByWord(std::cout);
 
 //   b.addAllWords("be My guest\nto the yarn");
 
 
 
-//   b.dumpWordsSortedByWord(std::cout);
+//   //b.dumpWordsSortedByWord(std::cout);
+
+//   b.dumpWordsSortedByOccurence(std::cout);
 //   return 0;
 // }
