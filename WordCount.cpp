@@ -221,7 +221,7 @@ void WordCount::dumpWordsSortedByWord(std::ostream &out) const {
   std::vector<std::string> words;
   for (int i = 0; i<100; i++)
   {
-    for(int j = 0; j<(int) table[i].size(); i++)
+    for(int j = 0; j<(int) table[i].size(); j++)
     {
       
       words.push_back(table[i].at(j).first);
@@ -265,7 +265,7 @@ void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
   std::vector<std::pair<std::string,int>> words;
   for (int i = 0; i<100; i++)
   {
-    for(int j = 0; j<(int) table[i].size(); i++)
+    for(int j = 0; j<(int) table[i].size(); j++)
     {
       words.push_back(table[i].at(j));
         
@@ -381,33 +381,43 @@ void WordCount::addAllWords(const std::string& text) {
 
 
 
-// int main()
-// {
-//   std::string s= "\tr";
+int main()
+{
+  std::string s= "\tr";
 
-//   std::string y = " ";
+  std::string y = " ";
 
-//   char g = s.at(0);
-//   // bool b = *"\t"==g;
+  char g = s.at(0);
+  WordCount b;
 
-//   // std::cout<<b<<endl;
-//   WordCount b;
+  WordCount c;
 
-//   b.incrWordCount("be");
-//   b.incrWordCount("be");
-//   b.incrWordCount("ce");
+
+  c.addAllWords("\n\n\n\n");
+
+
+  std::cout<<"dumping c"<<endl;
+
+  c.dumpWordsSortedByOccurence(std::cout);
+
+  // b.incrWordCount("be");
+  // b.incrWordCount("be");
+  // b.incrWordCount("ce");
 
 
   
 
-//   // b.dumpWordsSortedByWord(std::cout);
 
-//   b.addAllWords("be My guest\nto the yarn");
+  // b.addAllWords("be My guest\nto the yarn");
+  b.addAllWords("Sentence is a sentence");
 
+  std::cout<<"b sorted by word"<<endl;
+  b.dumpWordsSortedByWord(std::cout);
 
+  //b.dumpWordsSortedByWord(std::cout);
 
-//   //b.dumpWordsSortedByWord(std::cout);
+  std::cout<<"b sorted by occurence"<<endl;
 
-//   b.dumpWordsSortedByOccurence(std::cout);
-//   return 0;
-// }
+  b.dumpWordsSortedByOccurence(std::cout);
+  return 0;
+}
