@@ -271,7 +271,7 @@ void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
 
   
 
-  for(int i = 0 ;(int) i<words.size() ; i++)
+  for(int i = 0 ; i<(int) words.size() ; i++)
   {
     int c = words.at(i).second;
     std::string wordle = words.at(i).first;
@@ -297,7 +297,7 @@ void WordCount::addAllWords(const std::string& text) {
 
   std::vector<std::string> words;
 
-  for(int i = 0;(int) i<s.size() ; i++)
+  for(int i = 0; i<(int) s.size() ; i++)
     {
       if(s.substr(i,i+1)==" ")
       {
