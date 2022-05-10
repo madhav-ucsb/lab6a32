@@ -336,10 +336,17 @@ void WordCount::addAllWords(const std::string& text) {
       
       
    }
+  b = 0;
+  i = b;
 
 
 
 
   return ;
+}
+
+int main()
+{
+  return 0;
 }
 
