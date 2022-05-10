@@ -345,8 +345,3 @@ void WordCount::addAllWords(const std::string& text) {
   return ;
 }
 
-int main()
-{
-  return 0;
-}
-
