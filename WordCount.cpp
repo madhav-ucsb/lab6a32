@@ -381,43 +381,43 @@ void WordCount::addAllWords(const std::string& text) {
 
 
 
-int main()
-{
-  std::string s= "\tr";
+// int main()
+// {
+//   std::string s= "\tr";
 
-  std::string y = " ";
+//   std::string y = " ";
 
-  char g = s.at(0);
-  WordCount b;
+//   char g = s.at(0);
+//   WordCount b;
 
-  WordCount c;
-
-
-  c.addAllWords("\n\n\n\n");
+//   WordCount c;
 
 
-  std::cout<<"dumping c"<<endl;
+//   c.addAllWords("\n\n\n\n");
 
-  c.dumpWordsSortedByOccurence(std::cout);
 
-  // b.incrWordCount("be");
-  // b.incrWordCount("be");
-  // b.incrWordCount("ce");
+//   std::cout<<"dumping c"<<endl;
+
+//   c.dumpWordsSortedByOccurence(std::cout);
+
+//   // b.incrWordCount("be");
+//   // b.incrWordCount("be");
+//   // b.incrWordCount("ce");
 
 
   
 
 
-  // b.addAllWords("be My guest\nto the yarn");
-  b.addAllWords("Sentence is a sentence");
+//   // b.addAllWords("be My guest\nto the yarn");
+//   b.addAllWords("Sentence is a sentence");
 
-  std::cout<<"b sorted by word"<<endl;
-  b.dumpWordsSortedByWord(std::cout);
+//   std::cout<<"b sorted by word"<<endl;
+//   b.dumpWordsSortedByWord(std::cout);
 
-  //b.dumpWordsSortedByWord(std::cout);
+//   //b.dumpWordsSortedByWord(std::cout);
 
-  std::cout<<"b sorted by occurence"<<endl;
+//   std::cout<<"b sorted by occurence"<<endl;
 
-  b.dumpWordsSortedByOccurence(std::cout);
-  return 0;
-}
+//   b.dumpWordsSortedByOccurence(std::cout);
+//   return 0;
+// }
