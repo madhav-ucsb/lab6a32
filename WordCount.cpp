@@ -328,16 +328,15 @@ void WordCount::addAllWords(const std::string& text) {
   {
     words.push_back(word);
   }
-  int b ;
+
   for(int i = 0 ; i<(int) words.size() ; i++)
    {
-     b = incrWordCount(words.at(i));
+     incrWordCount(words.at(i));
      
       
       
    }
-  b = 0;
-  i = b;
+
 
 
 
