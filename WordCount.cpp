@@ -308,24 +308,26 @@ void WordCount::addAllWords(const std::string& text) {
 
   std::vector<std::string> words;
 
-  std::string empty = " /nt";
+  std::string empty = " \n\t";
   char space = empty.at(0);
-  char t = empty.at(3);
+  // // char t = empty.at(3);
 
-  char dash = empty.at(1);
-  char n = empty.at(2);
+  // // char dash = empty.at(1);
+  // // char n = empty.at(2);
 
-  char two = *"";
+  // char two = *"";
+
+  // char three = *"\n";
   
 
   for(int i = 0; i<(int) s.size() ; i++)
     {
       char one = s.at(i);
-      if((size_t) i!=s.size() - 1)
-      {
-        two = s.at(i+1);
-      }
-      if(one==space)
+      // if((size_t) i!=s.size() - 1)
+      // {
+      //   two = s.at(i+1);
+      // }
+      if(one==empty.at(0)||one==empty.at(1)||one==empty.at(2))
       {
         
         if(word.size()>0)
@@ -337,16 +339,16 @@ void WordCount::addAllWords(const std::string& text) {
         }
         word = "";
       }
-      else if ((i<(int) s.size()-1) && (one==dash) &&(two==n || two==t))
-      {
-        i = i + 1;
-        if(word.size() > 0)
-        {
-          word = makeValidWord(word);
-          words.push_back(word);
-        }
-        word = "";
-      }
+      // else if ((i<(int) s.size()-1) && (one==dash) &&(two==three || two==t))
+      // {
+      //   i = i + 1;
+      //   if(word.size() > 0)
+      //   {
+      //     word = makeValidWord(word);
+      //     words.push_back(word);
+      //   }
+      //   word = "";
+      // }
       else
       {
         word = word + one;
@@ -379,23 +381,31 @@ void WordCount::addAllWords(const std::string& text) {
 
 
 
-int main()
-{
-  WordCount b;
+// int main()
+// {
+//   std::string s= "\tr";
 
-  b.incrWordCount("be");
-  b.incrWordCount("be");
-  b.incrWordCount("ce");
+//   std::string y = " ";
+
+//   char g = s.at(0);
+//   // bool b = *"\t"==g;
+
+//   // std::cout<<b<<endl;
+//   WordCount b;
+
+//   b.incrWordCount("be");
+//   b.incrWordCount("be");
+//   b.incrWordCount("ce");
 
 
   
 
-  b.dumpWordsSortedByWord(std::cout);
+//   b.dumpWordsSortedByWord(std::cout);
 
-  b.addAllWords("be My guest to the yarn");
+//   b.addAllWords("be My guest\nto the yarn");
 
 
 
-  b.dumpWordsSortedByWord(std::cout);
-  return 0;
-}
+//   b.dumpWordsSortedByWord(std::cout);
+//   return 0;
+// }
