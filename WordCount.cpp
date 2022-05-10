@@ -215,7 +215,7 @@ void WordCount::dumpWordsSortedByWord(std::ostream &out) const {
   std::vector<std::string> words;
   for (int i = 0; i<100; i++)
   {
-    for(int j = 0; j<table[i].size(); i++)
+    for(int j = 0; j<(int) table[i].size(); i++)
     {
       words.push_back(table[i].at(j).first);
         
@@ -223,7 +223,7 @@ void WordCount::dumpWordsSortedByWord(std::ostream &out) const {
       
   }
   sort(words.begin() , words.end());
-  for(int i = words.size() - 1; i>=0; i--)
+  for(int i = (int) words.size() - 1; i>=0; i--)
   {
     int occurences = getWordCount(words.at(i));
     out<<words.at(i)<<","<<occurences<<endl;
@@ -245,7 +245,7 @@ void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
   std::vector<std::pair<std::string,int>> words;
   for (int i = 0; i<100; i++)
   {
-    for(int j = 0; j<table[i].size(); i++)
+    for(int j = 0; j<(int) table[i].size(); i++)
     {
       words.push_back(table[i].at(j));
         
@@ -271,7 +271,7 @@ void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
 
   
 
-  for(int i = 0 ; i<words.size() ; i++)
+  for(int i = 0 ;(int) i<words.size() ; i++)
   {
     int c = words.at(i).second;
     std::string wordle = words.at(i).first;
@@ -297,7 +297,7 @@ void WordCount::addAllWords(const std::string& text) {
 
   std::vector<std::string> words;
 
-  for(int i = 0; i<s.size() ; i++)
+  for(int i = 0;(int) i<s.size() ; i++)
     {
       if(s.substr(i,i+1)==" ")
       {
@@ -308,7 +308,7 @@ void WordCount::addAllWords(const std::string& text) {
         }
         word = "";
       }
-      else if (i<s.size()-1 && (s.substr(i , i+ 2)=="\n"|| s.substr(i , i+ 2)=="\t"))
+      else if (i<(int) s.size()-1 && (s.substr(i , i+ 2)=="\n"|| s.substr(i , i+ 2)=="\t"))
       {
         i = i + 1;
         if(word.size() > 0)
@@ -324,12 +324,12 @@ void WordCount::addAllWords(const std::string& text) {
       
   }
 
-  if(word.size()>0)
+  if((int) word.size()>0)
   {
     words.push_back(word);
   }
   int b = 0;
-  for(int i = 0 ; i<words.size() ; i++)
+  for(int i = 0 ; i<(int) words.size() ; i++)
    {
      b = incrWordCount(words.at(i));
      
