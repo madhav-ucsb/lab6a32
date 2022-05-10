@@ -325,7 +325,7 @@ void WordCount::addAllWords(const std::string& text) {
         if(word.size()>0)
         {
           
-          words.push_back(word);
+          words.push_back(makeValidWord(word));
         }
         word = "";
       }
@@ -334,7 +334,7 @@ void WordCount::addAllWords(const std::string& text) {
         i = i + 1;
         if(word.size() > 0)
         {
-          words.push_back(word);
+          words.push_back(makeValidWord(word));
         }
         word = "";
       }
@@ -369,24 +369,24 @@ void WordCount::addAllWords(const std::string& text) {
 
 
 
-// int main()
-// {
-//   WordCount b;
+int main()
+{
+  WordCount b;
 
-//   b.incrWordCount("be");
-//   b.incrWordCount("be");
-//   b.incrWordCount("ce");
+  b.incrWordCount("be");
+  b.incrWordCount("be");
+  b.incrWordCount("ce");
 
 
   
 
-//   b.dumpWordsSortedByWord(std::cout);
+  b.dumpWordsSortedByWord(std::cout);
 
-//   b.addAllWords("be my guest to the yarn");
+  b.addAllWords("be My guest to the yarn");
 
 
 
-//   b.dumpWordsSortedByWord(std::cout);
-//   return 0;
-// }
+  b.dumpWordsSortedByWord(std::cout);
+  return 0;
+}
 
