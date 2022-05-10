@@ -217,12 +217,13 @@ void WordCount::dumpWordsSortedByWord(std::ostream &out) const {
   {
     for(int j = 0; j<(int) table[i].size(); i++)
     {
+      
       words.push_back(table[i].at(j).first);
         
     }
       
   }
-  sort(words.begin() , words.end());
+  std::sort(words.begin() , words.end());
   for(int i = (int) words.size() - 1; i>=0; i--)
   {
     int occurences = getWordCount(words.at(i));
@@ -235,6 +236,19 @@ void WordCount::dumpWordsSortedByWord(std::ostream &out) const {
 }
 
 void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
+  
+  // bool compareInterval(std::pair<std::string,int> i1, std::pair<std::string,int>  i2)
+  // {
+  //   if(i1.second<i2.second)
+  //   {
+  //     return true;
+  //   }
+  //   else if (i1.first<i2.first)
+  //   {
+  //     return true;
+  //   }
+  //   return false;
+  // }
 	// STUB
 
 
@@ -251,23 +265,14 @@ void WordCount::dumpWordsSortedByOccurence(std::ostream &out) const {
         
     }
   }
-  sort(words.begin(), words.end(), [](std::pair<std::string,int> &a, std::pair<std::string,int> &b)
-  {
-    std::string sone = a.first;
-    int imp = a.second;
-    int impb = b.second;
 
-    std::string sonb = b.first;
-    if(imp<impb)
-    {
-      return true;
-    }
-    else
-    {
-      return sone<sonb;
-      
-    }
-  });
+  
+  std::sort(words.begin(), words.end(), [](std::pair<std::string,int> &a, std::pair<std::string,int> &b)
+  {
+    return ((a.second<b.second)||(a.second==b.second&&a.first<b.first)); });
+
+  //sort(words.begin() , words.end() , compareInterval);
+  
 
   
 
@@ -297,10 +302,26 @@ void WordCount::addAllWords(const std::string& text) {
 
   std::vector<std::string> words;
 
+  std::string empty = " /nt";
+  char space = empty.at(0);
+  char t = empty.at(3);
+
+  char dash = empty.at(1);
+  char n = empty.at(2);
+
+  char two = *"";
+  
+
   for(int i = 0; i<(int) s.size() ; i++)
     {
-      if(s.substr(i,i+1)==" ")
+      char one = s.at(i);
+      if(i!=s.size() - 1)
       {
+        two = s.at(i+1);
+      }
+      if(one==space)
+      {
+        
         if(word.size()>0)
         {
           
@@ -308,17 +329,19 @@ void WordCount::addAllWords(const std::string& text) {
         }
         word = "";
       }
-      else if (i<(int) s.size()-1 && (s.substr(i , i+ 2)=="\n"|| s.substr(i , i+ 2)=="\t"))
+      else if ((i<(int) s.size()-1) && (one==dash) &&(two==n || two==t))
       {
         i = i + 1;
         if(word.size() > 0)
         {
           words.push_back(word);
         }
+        word = "";
       }
       else
       {
-        word = word + s.at(i);
+        word = word + one;
+
       }
       
       
@@ -343,4 +366,27 @@ void WordCount::addAllWords(const std::string& text) {
 
   return ;
 }
+
+
+
+// int main()
+// {
+//   WordCount b;
+
+//   b.incrWordCount("be");
+//   b.incrWordCount("be");
+//   b.incrWordCount("ce");
+
+
+  
+
+//   b.dumpWordsSortedByWord(std::cout);
+
+//   b.addAllWords("be my guest to the yarn");
+
+
+
+//   b.dumpWordsSortedByWord(std::cout);
+//   return 0;
+// }
 
