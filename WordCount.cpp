@@ -79,6 +79,12 @@ int WordCount::incrWordCount(const std::string & word) {
 	// STUB
 	std::string s = makeValidWord(word);
 
+
+  if(s=="")
+  {
+    return 0;
+  }
+
   int h = (int) hash(s);
   bool inside = false;
 
@@ -373,23 +379,23 @@ void WordCount::addAllWords(const std::string& text) {
 
 
 
-// int main()
-// {
-//   WordCount b;
+int main()
+{
+  WordCount b;
 
-//   b.incrWordCount("be");
-//   b.incrWordCount("be");
-//   b.incrWordCount("ce");
+  b.incrWordCount("be");
+  b.incrWordCount("be");
+  b.incrWordCount("ce");
 
 
   
 
-//   b.dumpWordsSortedByWord(std::cout);
+  b.dumpWordsSortedByWord(std::cout);
 
-//   b.addAllWords("be My guest to the yarn");
+  b.addAllWords("be My guest to the yarn");
 
 
 
-//   b.dumpWordsSortedByWord(std::cout);
-//   return 0;
-// }
+  b.dumpWordsSortedByWord(std::cout);
+  return 0;
+}
